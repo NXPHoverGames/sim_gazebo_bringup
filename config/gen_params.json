@@ -1,7 +1,7 @@
 {	"setup":{
 		"autopilot": {
 			"autopilot_build_params_0": {
-				"repo": "git@github.com:rudislabs/PX4-Autopilot.git",
+				"repo": "git@github.com:NXPHoverGames/PX4-Autopilot.git",
 				"name": "NXP-Autopilot",
 				"version": "pr-cupcar-v2",
 				"clone": 1,
@@ -14,7 +14,7 @@
 		"gazebo": {
 			"gazebo_models": {
 				"gazebo_model_repo_0":{
-					"repo": "git@github.com:rudislabs/nxp_gazebo.git",
+					"repo": "git@github.com:NXPHoverGames/nxp_gazebo.git",
 					"version": "fire_turtle",
 					"name": "nxp_gazebo"
 				},
@@ -36,22 +36,22 @@
 		},
 		"ros2": {
 			"ros2_repo_0":{
-				"repo": "git@github.com:rudislabs/px4_msgs.git",
+				"repo": "git@github.com:NXPHoverGames/px4_msgs.git",
 				"version": "pr-cupcar",
 				"build_package": "px4_msgs",
 				"build_prefix": "--packages-select",
 				"build_postfix": "--symlink-install"
 			},
 			"ros2_repo_1":{
-				"repo": "git@github.com:rudislabs/px4_ros_com.git",
+				"repo": "git@github.com:NXPHoverGames/px4_ros_com.git",
 				"version": "pr-cupcar",
 				"build_package": "px4_ros_com",
 				"build_prefix": "--packages-select",
 				"build_postfix": "--symlink-install"
 			},
 			"ros2_repo_2":{
-				"repo": "git@github.com:rudislabs/nxp_cup_vision.git",
-				"version": "main",
+				"repo": "git@github.com:NXPHoverGames/nxp_cup_vision.git",
+				"version": "fire_turtle",
 				"build_package": "nxp_cup_vision",
 				"build_prefix": "--packages-select",
 				"build_postfix": "--symlink-install"
@@ -90,6 +90,11 @@
 					"variable": "GAZEBO_PLUGIN_PATH",
 					"value": "/opt/ros/foxy/lib",
 					"method": "prepend"
+				},
+				"environment_4": {
+					"variable": "PX4_SIM_SPEED_FACTOR",
+					"value": 0.5,
+					"method": "prepend"
 				}
 			}
 		}
@@ -124,7 +129,7 @@
 		"gazebo_name": "nxp_gazebo",
 		"generate_world": 1,
 		"generate_params":{
-			"world_name": "nxp_raceway_overpass",
+			"world_name": "nxp_raceway_octagon",
 			"sdf_version": "1.6",
 			"use_spherical_coords": 1,
 			"lat_lon_alt": [39.8039, -84.0606, 244],
@@ -142,21 +147,6 @@
 				"density": 2.5
 			},			
 			"embedded_models": {
-				"embed_model_0": {
-					"model": "stop_light_post",
-					"name": "stop_light_post_0",
-					"pose": "1 1 0 0 0 0"
-				},
-				"embed_model_1": {
-					"model": "coke_can",
-					"name": "coke_can_1",
-					"pose": "0 1 .2 0 0 0"
-				},
-				"embed_model_2": {
-					"model": "stop_sign",
-					"name": "beer_2",
-					"pose": "1 0 .2 0 0 0"
-				}
 			},
 			"video_widget": "NotSet",
 			"set_physics": 0,
@@ -174,7 +164,7 @@
 			"spawn_pose": [0, 0, 0.2, 0, 0, 0],
 			"instance": 0,
 			"generate_params":{
-				"controller": "ros2",
+				"controller": "px4",
 				"base_model": "nxp_cupcar",
 				"sdf_version": 1.6,
 				"mavlink_tcp_port": 4560,
