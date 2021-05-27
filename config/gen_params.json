@@ -111,9 +111,9 @@
 			"name": "nxp_track_vision_0",
 			"output": "screen",
 			"parameters": [	{"pyramid_down": 2},
-							{"camera_image": "trackImage0"},
-							{"debug_image": "debugImage0"},
-							{"namespace": "cupcar0"}
+						{"camera_image": "trackImage0"},
+						{"debug_image": "debugImage0"},
+						{"namespace": "cupcar0"}
 						]
 		},
 		"ros2_node_2":{
