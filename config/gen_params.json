@@ -93,7 +93,7 @@
 				},
 				"environment_4": {
 					"variable": "PX4_SIM_SPEED_FACTOR",
-					"value": "0.5",
+					"value": "0.7",
 					"method": "prepend"
 				}
 			}
@@ -110,7 +110,7 @@
 			"executable": "nxp_track_vision",
 			"name": "nxp_track_vision_0",
 			"output": "screen",
-			"parameters": [	{"pyramid_down": 2},
+			"parameters": [	{"pyramid_down": 0},
 						{"camera_image": "trackImage0"},
 						{"debug_image": "debugImage0"},
 						{"namespace": "cupcar0"}
